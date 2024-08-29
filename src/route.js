@@ -11,7 +11,7 @@ export const RouteNames = {
 };
 
 const routes = {
-  [RouteNames.HOME]: <></>,
+  [RouteNames.HOME]: import("./pages/detailCharacterPage"),
   [RouteNames.DETAIL]: <></>,
   [RouteNames.LOCATIONS]: <></>,
 };
