@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { GetCharacters } from "../graphQL/query";
-import { Typography } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 
 const ListCharactersPage = () => {
     const {data, loading, error} = useQuery(GetCharacters, { variables: {page: 1}});
