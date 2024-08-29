@@ -30,7 +30,7 @@ const ListCharactersPage = () => {
   if (error) return <p>{error.cause}</p>;
   return (
     <Box>
-      <Typography variant="h2">List of Char</Typography>
+      <Typography variant="h3">List of Characters</Typography>
       {cards}
       <Pagination
         page={page}

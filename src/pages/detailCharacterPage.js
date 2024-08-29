@@ -13,10 +13,17 @@ const DetailCharacterPage = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>error</p>;
   return (
-    <Box>
-      <Avatar src={data?.character?.image ?? ""} alt={data?.character?.name} />
+    <Box alignContent={"center"}>
+      <Avatar
+        variant="square"
+        src={data?.character?.image ?? ""}
+        alt={data?.character?.name}
+        sx={{ width: "30vw", height: "auto" }}
+      />
       <Typography variant="h3">{data?.character?.name}</Typography>
-      <Typography variant="h3">{data?.character?.status}</Typography>
+      <Typography variant="h4">{`status:  ${
+        data?.character?.status || "UNKNOWN"
+      }`}</Typography>
       <AssignLocation />
     </Box>
   );

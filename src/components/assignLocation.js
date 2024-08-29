@@ -13,11 +13,11 @@ const AssignLocation = () => {
   };
 
   return (
-    <Box>
-      <Typography variant="h3">Assign AssignLocation</Typography>
-      <Typography variant="h4"> Masukkan lokasi yang diinginkan </Typography>
+    <Box marginTop={10}>
+      <Typography variant="h4">Assign Location</Typography>
+      <Typography variant="h5"> Masukkan lokasi yang diinginkan </Typography>
       <TextField
-      value={location}
+        value={location}
         label="lokasi"
         variant="outlined"
         required
@@ -28,7 +28,9 @@ const AssignLocation = () => {
           setLocation(input.target.value);
         }}
       />
-      <Button onClick={submit}>Assign</Button>
+      <Button onClick={submit} variant="contained">
+        Assign
+      </Button>
     </Box>
   );
 };

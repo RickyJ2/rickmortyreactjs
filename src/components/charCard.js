@@ -10,6 +10,7 @@ const CharCard = ({id, image, charName}) => {
             height:"100%",
             borderRadius: "10px",
             boxShadow: "0 1px 2px rgba(0,0,0,0.1)",
+            margin: "5 10"
          }}
         >
             <CardMedia component="img" image={image} alt={charName} />
