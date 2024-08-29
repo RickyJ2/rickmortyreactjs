@@ -19,7 +19,7 @@ export const GetCharacters = gql`
 `;
 
 export const DetailCharacter = gql`
-  query Chatacter($id: ID!) {
+  query Character($id: ID!) {
     character(id: $id) {
       id
       name

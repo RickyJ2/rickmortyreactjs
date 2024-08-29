@@ -1,15 +1,16 @@
 import { useQuery } from "@apollo/client";
 import { GetCharacters } from "../graphQL/query";
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, Pagination } from "@mui/material";
 import CharCard from "../components/charCard";
 import { Link } from "react-router-dom";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 const ListCharactersPage = () => {
+  const [page, setPage] = useState(1);
   const { data, loading, error } = useQuery(GetCharacters, {
-    variables: { page: 1 },
+    variables: { page: page },
   });
-  const Cards = useMemo(
+  const cards = useMemo(
     () =>
       data && data.characters && data.characters.results?.length ? (
         data.characters.results.map((character) => (
@@ -30,7 +31,14 @@ const ListCharactersPage = () => {
   return (
     <Box>
       <Typography variant="h2">List of Char</Typography>
-      <Cards/>
+      {cards}
+      <Pagination
+        page={page}
+        count={data.characters?.info?.pages ?? 1}
+        shape="rounded"
+        variant="outlined"
+        onChange={(_, page) => setPage(page)}
+      />
     </Box>
   );
 };
