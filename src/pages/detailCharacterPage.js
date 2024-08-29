@@ -33,7 +33,7 @@ const DetailCharacterPage = () => {
       <Typography variant="h4">{`gender:  ${
         data?.character?.gender || "UNKNOWN"
       }`}</Typography>
-      <AssignLocation />
+      <AssignLocation character={data ?? {}} />
     </Box>
   );
 };
