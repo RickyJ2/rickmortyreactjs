@@ -11,7 +11,7 @@ const Header = () => {
       style={{
         display: "flex",
         flexDirection: "row",
-        height: "15vh",
+        height: "10vh",
         alignItems: "center",
       }}
     >

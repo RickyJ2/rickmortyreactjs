@@ -8,7 +8,7 @@ const ErrorNotFound = () => {
       alignItems="center"
       height="100vh"
     >
-      <Typography variant="h2">404 Halaman tidak ditemukan</Typography>
+      <Typography variant="h2">404 Page Not Found</Typography>
     </Box>
   );
 };

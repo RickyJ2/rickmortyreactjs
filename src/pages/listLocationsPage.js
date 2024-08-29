@@ -6,7 +6,8 @@ import { Typography } from "@mui/material";
 const ListLocationsPage = () => {
   const listLocs = useMemo(() => getLocationOnly(), []);
 
-  if (!listLocs || listLocs.length <= 0) return <p>Tidak ada lokasi</p>;
+  if (!listLocs || listLocs.length <= 0)
+    return <p>There are no locations assign yet</p>;
   return (
     <Box>
       {listLocs.map((loc) => (

@@ -24,6 +24,15 @@ const DetailCharacterPage = () => {
       <Typography variant="h4">{`status:  ${
         data?.character?.status || "UNKNOWN"
       }`}</Typography>
+      <Typography variant="h4">{`species:  ${
+        data?.character?.species || "UNKNOWN"
+      }`}</Typography>
+      <Typography variant="h4">{`type:  ${
+        data?.character?.type || "UNKNOWN"
+      }`}</Typography>
+      <Typography variant="h4">{`gender:  ${
+        data?.character?.gender || "UNKNOWN"
+      }`}</Typography>
       <AssignLocation />
     </Box>
   );

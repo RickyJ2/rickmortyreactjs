@@ -22,7 +22,7 @@ const ListCharactersPage = () => {
           </Link>
         ))
       ) : (
-        <Typography variant="h3">Tidak ada karakter ditemukan</Typography>
+        <Typography variant="h3">There are no characters yet</Typography>
       ),
     [data]
   );
