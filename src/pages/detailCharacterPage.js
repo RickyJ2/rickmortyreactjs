@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { DetailCharacter } from "../graphQL/query";
 import { Avatar, Box, Typography } from "@mui/material";
+import AssignLocation from "../components/assignLocation";
 
 const DetailCharacterPage = () => {
   const { id } = useParams();
@@ -15,6 +16,7 @@ const DetailCharacterPage = () => {
     <Box>
       <Avatar src={data?.character?.image ?? ""} alt={data?.character?.name} />
       <Typography variant="h2">{data?.character?.name}</Typography>
+      <AssignLocation />
     </Box>
   );
 };

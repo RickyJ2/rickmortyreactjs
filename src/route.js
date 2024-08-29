@@ -12,7 +12,7 @@ export const RouteNames = {
 const routes = {
   [RouteNames.HOME]: import("./pages/listCharactersPage"),
   [RouteNames.DETAIL]: import("./pages/detailCharacterPage"),
-  [RouteNames.LOCATIONS]: <></>,
+  [RouteNames.LOCATIONS]: import("./pages/listLocationsPage"),
 };
 
 const lazyRoutes = Object.entries(routes).map(([route, component]) => ({
