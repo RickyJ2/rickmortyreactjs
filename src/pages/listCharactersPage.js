@@ -2,6 +2,8 @@ import { useQuery } from "@apollo/client";
 import { GetCharacters } from "../graphQL/query";
 import { Typography, Box } from "@mui/material";
 import CharCard from "../components/charCard";
+import { Link } from "react-router-dom";
+import { useMemo } from "react";
 
 const ListCharactersPage = () => {
   const { data, loading, error } = useQuery(GetCharacters, {
