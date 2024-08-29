@@ -11,9 +11,9 @@ export const RouteNames = {
 };
 
 const routes = {
-  [RouteNames.HOME]: import("pages/Home"),
-  [RouteNames.DETAIL]: import("pages/Charater"),
-  [RouteNames.LOCATIONS]: import("pages/Game"),
+  [RouteNames.HOME]: <></>,
+  [RouteNames.DETAIL]: <></>,
+  [RouteNames.LOCATIONS]: <></>,
 };
 
 const lazyRoutes = Object.entries(routes).map(([route, component]) => ({
