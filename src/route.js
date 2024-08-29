@@ -5,7 +5,7 @@ import LoadingPage from "./pages/loadingPage";
 import ErrorNotFound from "./pages/errorNotFound";
 
 export const RouteNames = {
-  HOME: "/app",
+  HOME: "/",
   DETAIL: "/detail",
   LOCATIONS: "/locations",
 };
