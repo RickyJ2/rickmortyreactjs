@@ -1,12 +1,17 @@
-
-import './App.css';
-import { BrowserRouter } from 'react-router-dom';
-import { RoutersComponent } from './route';
+import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+import { RoutersComponent } from "./route";
+import Layout from "./components/layout";
+import { Box } from "@mui/material";
 
 function App() {
   return (
     <BrowserRouter>
-      <RoutersComponent/>
+      <Layout>
+        <Box>
+          <RoutersComponent />
+        </Box>
+      </Layout>
     </BrowserRouter>
   );
 }

@@ -15,7 +15,8 @@ const DetailCharacterPage = () => {
   return (
     <Box>
       <Avatar src={data?.character?.image ?? ""} alt={data?.character?.name} />
-      <Typography variant="h2">{data?.character?.name}</Typography>
+      <Typography variant="h3">{data?.character?.name}</Typography>
+      <Typography variant="h3">{data?.character?.status}</Typography>
       <AssignLocation />
     </Box>
   );
