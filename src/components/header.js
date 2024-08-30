@@ -11,14 +11,14 @@ const Header = () => {
       style={{
         display: "flex",
         flexDirection: "row",
-        height: "10vh",
+        height: "8vh",
         alignItems: "center",
       }}
     >
-      <IconButton onClick={() => setIsOpen(true)}>
+      <IconButton onClick={() => setIsOpen(true)} style={{fontSize:"1rem"}}>
         <Menu style={{ color: "white" }} />
       </IconButton>
-      <Typography>Rick & Morty</Typography>
+      <Typography textAlign="center" variant="h4"><b>Rick & Morty</b></Typography>
       <ListMenu open={isOpen} onClose={() => setIsOpen(false)} />
     </AppBar>
   );

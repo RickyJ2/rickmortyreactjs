@@ -3,6 +3,7 @@ import { Card, CardHeader, CardMedia } from "@mui/material";
 const CharCard = ({ id, image, charName }) => {
   return (
     <Card
+      key={id}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -14,7 +15,7 @@ const CharCard = ({ id, image, charName }) => {
       }}
     >
       <CardMedia component="img" image={image} alt={charName} />
-      <CardHeader title={charName} />
+      <CardHeader title={charName} sx={'& a:{textDecoration: none}'} />
     </Card>
   );
 };

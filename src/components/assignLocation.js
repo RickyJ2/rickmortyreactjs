@@ -1,11 +1,13 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Alert, Box, Button, Collapse, IconButton, TextField, Typography } from "@mui/material";
 import { addLocation } from "../localStorage";
 import { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { DetailCharacter } from "../graphQL/query";
 import { useParams } from "react-router-dom";
-const AssignLocation = ({ character }) => {
+
+const AssignLocation = () => {
   const { id } = useParams();
+  const [isSuccess, setIsSuccess] = useState(false);
   const [location, setLocation] = useState("");
   const { data } = useQuery(DetailCharacter, {
     variables: { id: id || 1 },
@@ -21,21 +23,23 @@ const AssignLocation = ({ character }) => {
 
   return (
     <Box marginTop={10}>
-      <Typography variant="h4">Assign Location</Typography>
-      <Typography variant="h5"> Masukkan lokasi yang diinginkan </Typography>
+      <Typography variant="h6">Assign Location</Typography>
+      <Typography fontSize={"1.5rem"}> Assign this character to designed location </Typography>
+      <Collapse in={isSuccess}>
+      <Alert onClose={()=>{setIsSuccess(false)}} severity="success">Location successfully assigned!</Alert>
+      </Collapse>
       <TextField
         value={location}
-        label="lokasi"
+        label="assigned location"
         variant="outlined"
         required
         fullWidth
         margin="normal"
         onChange={(input) => {
-          console.log(input.target.value);
           setLocation(input.target.value);
         }}
       />
-      <Button onClick={submit} variant="contained">
+      <Button disabled={location.length <= 0} onClick={submit} variant="contained">
         Assign
       </Button>
     </Box>

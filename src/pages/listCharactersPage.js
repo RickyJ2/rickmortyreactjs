@@ -4,6 +4,7 @@ import { Typography, Box, Pagination } from "@mui/material";
 import CharCard from "../components/charCard";
 import { Link } from "react-router-dom";
 import { useMemo, useState } from "react";
+import LoadingPage from "./loadingPage";
 
 const ListCharactersPage = () => {
   const [page, setPage] = useState(1);
@@ -26,7 +27,7 @@ const ListCharactersPage = () => {
       ),
     [data]
   );
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <LoadingPage/>;
   if (error) return <p>{error.cause}</p>;
   return (
     <Box>

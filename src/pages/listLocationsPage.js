@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { getCharsByLocation, getLocationOnly } from "../localStorage";
 import { Box } from "@mui/system";
-import { MenuItem, Select, Typography } from "@mui/material";
+import { MenuItem, Select } from "@mui/material";
 import { Link } from "react-router-dom";
 import CharCard from "../components/charCard";
 
@@ -25,7 +25,7 @@ const ListLocationsPage = () => {
   }, [selectedLoc]);
 
   if (!listLocs || listLocs.length <= 0)
-    return <p>There are no locations assign yet</p>;
+    return <p>There are no locations assigned yet!</p>;
   return (
     <Box width={"80vw"}>
       <Select

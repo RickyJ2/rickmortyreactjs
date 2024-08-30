@@ -3,7 +3,7 @@ import Header from "./header";
 
 const Layout = ({ children }) => (
   <Box
-    paddingTop={"16vh"}
+    paddingY={"16vh"}
     display={"flex"}
     alignItems={"center"}
     flex={1}
