@@ -1,4 +1,12 @@
-import { Alert, Box, Button, Collapse, IconButton, TextField, Typography } from "@mui/material";
+import {
+  Alert,
+  Box,
+  Button,
+  Collapse,
+  IconButton,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { addLocation } from "../localStorage";
 import { useState } from "react";
 import { useQuery } from "@apollo/client";
@@ -19,14 +27,22 @@ const AssignLocation = () => {
       image: data?.character?.image,
     });
     setLocation("");
+    setIsSuccess(true);
   };
 
   return (
     <Box marginTop={10}>
       <Typography variant="h6">Assign Location</Typography>
-      <Typography fontSize={"1.5rem"}> Assign this character to designed location </Typography>
+      <Typography> Assign this character to designed location </Typography>
       <Collapse in={isSuccess}>
-      <Alert onClose={()=>{setIsSuccess(false)}} severity="success">Location successfully assigned!</Alert>
+        <Alert
+          onClose={() => {
+            setIsSuccess(false);
+          }}
+          severity="success"
+        >
+          Location successfully assigned!
+        </Alert>
       </Collapse>
       <TextField
         value={location}
@@ -39,7 +55,11 @@ const AssignLocation = () => {
           setLocation(input.target.value);
         }}
       />
-      <Button disabled={location.length <= 0} onClick={submit} variant="contained">
+      <Button
+        disabled={location.length <= 0}
+        onClick={submit}
+        variant="contained"
+      >
         Assign
       </Button>
     </Box>
